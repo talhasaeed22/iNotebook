@@ -1,38 +1,283 @@
-.App {
+*{
+  font-family: 'Baloo Bhai 2', cursive;
+}
+
+/* //NAVBAR CSS */
+
+.navbar{
+  padding: 12px 12%;
+  border-bottom: 2.5px solid orangered;
+}
+.navbar-nav{
+  margin-left: 15%;
+}
+.nav-btn{
+  border-radius: 31px;
+  width: 93px;
+  font-size: 0.9rem;
+  transition: all 0.5s ease-in-out;
+}
+#login {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.1);
+  padding: 5px 22px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #000000;
+  border-radius: 30px;
+}
+#signup {
+  background-color: orangered;
+  border: none;
+  color: white;
+}
+#login:hover{
+  transform: scale(1.1);
+  border: 1px solid orangered;
+}
+#signup:hover{
+  transform: scale(1.1);
+  background-color: black;
+  color: white;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: orangered;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+  font-size: 18px;
+}
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+  color: orangered;
+  font-weight: bold;
+}
+@media(max-width:990px){
+  .navbar{
+    padding: 0px;
+  }
+}
+
+/* //HOME CSS */
+.home-header{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(5, 0, 136, 0.5), rgba(5, 0, 136, 0.5));
+  background-position: center;
+  background-size: cover;
+}
+.home-heading{
+      font-size: 4rem;
+      font-weight: bold;
+}
+.content{
+  padding: 107px 60px;
+}
+.home-btn{
+  background-color: orangered;
+  border: none;
+  width: 180px;
+  color: white;
+  border-radius: 31px;
+  padding: 10px 22px;
+  margin-left: 53px;
+  transition: all 0.5s ease-in-out;
+}
+.home-btn:hover{
+  background-color: black;
+  transform: scale(1.1);
+  color: white;
+}
+@media(max-width:490px){
+  .home-heading{
+    font-size: 2.7rem;
+  } 
+  .content{
+    padding: 57px 7px;
+    
+  }
+}
+@media(max-width:300px){
+  .home-btn{
+    margin-left: 2px;
+  }
+}
+
+/* //ABOUT US CSS */
+.p-heading{
+  font-size: 4rem;
+}
+#ul {
+  list-style: none;
+}
+
+#ul li:before {
+  content: '✓';
+  padding-right: 12px;
+}
+.headings{
+  color: white;
+}
+.muted{
+  color: #f5ca7a;
+}
+@media(max-width:991px){
+  .headings{
+    color: orangered;
+  }
+  .muted{
+    color: #6c757d;
+  }
+}
+@media(max-width:360px){
+  .p-heading{
+    font-size: 3rem;
+  }.headings{
+    font-size: 3rem;
+  }
+}
+/* //CONTACT US CSS */
+/* //Contact CSS */
+
+#footer2 {
+  text-align: center;
+  
+  display: flex;
+}
+#footer2 .form {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 50%;
+  /* padding: 4px 206px; */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+#footer2 .form input {
+  margin: 14px;
+  height: 24px;
+  background: transparent;
+  border-bottom-width: 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  align-content: center;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  font-size: 1rem;
+  
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#footer2 .form input:focus {
+  outline: none;
+}
+.contact-button{
+  display: block;
+  margin: auto;
+  border: none;
+  border-radius: 23px;
+  background-color: orangered;
   color: white;
+  padding: 5px 22px;
+  transition: 0.7s all ease-in-out;
+}
+.contact-button:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.1);
 }
 
-.App-link {
-  color: #61dafb;
+/* //LOGIN PAGE CSS */
+
+#login-container{
+  background-color: #c0c1c3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 6% 0%;
+}
+.login-content{
+  width: 74%;
+  margin: 5% 0%;
+}
+.login-content .inp{
+  width:100%;
+  background:transparent;
+  border:none;
+  border-bottom: 1px solid black;
+  margin-bottom:4px;
+}
+.login-content input:focus{
+  outline:none;
+}
+.welcome-btn {
+  font-size: 15px;
+  color: white;
+  display: block;
+  border: none;
+  margin: 8% auto;
+  width: 42%;
+  padding: 7px;
+  border-radius: 15px;
+  background-color: orangered;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.welcome-btn:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.1);
+}
+.box{
+  padding:2px 12px;
+  margin: 1% 0%;
+  width: 29%;
+  height: 485px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  border-radius:12px;
+
+}
+#left_box{
+  padding: 12px 0px;
+  border-top-right-radius:0px;
+  border-bottom-right-radius:0px;
+  background-color:white;
+  color:black;
+}
+#left_box .btn{
+  background-color: #ff5621;
+  color:white;
+}
+#left_box .btn:hover{
+  background-color: black;
+  color:white;
+}
+#right_box{
+  border-top-left-radius:0px;
+  border-bottom-left-radius:0px;
+  color:white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#create_aacount{
+  color:orangered;
+}
+@media (max-width: 800px){
+  #login-container{
+      flex-direction:column;
   }
-  to {
-    transform: rotate(360deg);
+  .box{
+      width:85%;
+      height:435px;    
   }
+
+
+}
+
+
+/* //notesItemCSS */
+.notesicon{
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+.notesicon:hover{
+  transform: scale(1.5);
 }
