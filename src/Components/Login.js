@@ -20,6 +20,7 @@ const Login = () => {
         if(json.success){
             //SAVE THE AUTH TOKEN AND REDIRECT
             localStorage.setItem('token', json.token);
+            localStorage.setItem('name', json.name);
             nevigate('/Notes')
         }else{
             alert("Invalid Credintials");

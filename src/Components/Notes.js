@@ -61,7 +61,7 @@ const Notes = () => {
                         </div>
                         <div className="modal-footer">
                             <button ref={closeRef} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary " onClick={updateClick}>Update</button>
+                            <button style={{backgroundColor:'orangered', color:'white'}} type="button" className="btn  " onClick={updateClick}>Update</button>
                         </div>
                     </div>
                 </div>
