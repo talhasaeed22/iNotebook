@@ -7,23 +7,29 @@ const Login = () => {
     const url = 'http://localhost:5000';
     let nevigate = useNavigate();
     const handleLogin = async (e)=>{
-        e.preventDefault();
-        const response = await fetch(`${url}/api/auth/login`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({email:loginCred.email, password:loginCred.password})
-        });
-        const json = await response.json();
-        console.log(json);
-        if(json.success){
-            //SAVE THE AUTH TOKEN AND REDIRECT
-            localStorage.setItem('token', json.token);
-            localStorage.setItem('name', json.name);
-            nevigate('/Notes')
+        if(loginCred.password.length < 5 || loginCred.email.length === 0){
+            alert("please Enter Valid Email and Password")
+            e.preventDefault();
         }else{
-            alert("Invalid Credintials");
+
+            e.preventDefault();
+            const response = await fetch(`${url}/api/auth/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({email:loginCred.email, password:loginCred.password})
+            });
+            const json = await response.json();
+            console.log(json);
+            if(json.success){
+                //SAVE THE AUTH TOKEN AND REDIRECT
+                localStorage.setItem('token', json.token);
+                localStorage.setItem('name', json.name);
+                nevigate('/Notes')
+            }else{
+                alert("Invalid Credintials");
+            }
         }
     }
 

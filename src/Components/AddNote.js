@@ -8,9 +8,15 @@ const AddNote = () => {
     const [note, setNote] = useState({ title: "", description: "", category: "" });
 
     const addClick = (e) => {
-        e.preventDefault();
-        addNote(note.title, note.description, note.category);
-        setNote({ title: "", description: "", category: "" });
+        if(note.title.length === 0 || note.category.length === 0 || note.description.length === 0){
+            alert("Please Fill All the Fields")
+            e.preventDefault();
+        }else{
+
+            e.preventDefault();
+            addNote(note.title, note.description, note.category);
+            setNote({ title: "", description: "", category: "" });
+        }
     }
 
     const onChange = (e) => {
@@ -28,7 +34,7 @@ const AddNote = () => {
                     <div id="footer2">
                         <form className="form" id="form1">
                             <input value={note.title} type="text" id="title" name='title' placeholder="Enter Title Here" onChange={onChange} />
-                            <input value={note.category} type="email" id="category" name='category' placeholder="Enter Category Here" onChange={onChange} />
+                            <input value={note.category} type="text" id="category" name='category' placeholder="Enter Category Here" onChange={onChange} />
                             <textarea value={note.description} onChange={onChange} style={{ padding: "24px" }} name="description" id="" cols="30" rows="5"
                                 placeholder="Enter Your Note Here"></textarea>
                             <button className="contact-button my-4" onClick={addClick}>Add Note!</button>

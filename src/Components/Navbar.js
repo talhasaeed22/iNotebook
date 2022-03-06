@@ -45,7 +45,7 @@ const Navbar = () => {
                         {!localStorage.getItem('token')?<div className="d-flex">
                             <button onClick={login} id='login' className="nav-btn mx-2">Login</button>
                             <button onClick={signup} id='signup' className="nav-btn mx-2">Sign Up</button>
-                        </div>:<a style={{fontSize:'1.2rem'}}> Hello, {localStorage.getItem('name')} <button style={{padding:'9px 9px'}} onClick={handleLogout} className="nav-btn mx-2" id="signup">Logout</button> </a>}
+                        </div>:<label style={{fontSize:'1.2rem'}}> Hello, {localStorage.getItem('name')} <button style={{padding:'9px 9px'}} onClick={handleLogout} className="nav-btn mx-2" id="signup">Logout</button> </label>}
                         
                     </div>
                 </div>
