@@ -13,6 +13,10 @@ const Navbar = () => {
         let path = `/Login`;
         navigate(path);
     }
+    const handleLogout = ()=>{
+        localStorage.removeItem('token');
+        navigate('/Login');
+    }
     return (
         <>
             <nav style={{position:'sticky', top:'0px', zIndex:'1' , backgroundColor:'#f1f1f1'}} className="navbar navbar-expand-lg navbar-light bg-">
@@ -37,10 +41,11 @@ const Navbar = () => {
                             </li>
                             
                         </ul>
-                        <div className="d-flex">
+                        {!localStorage.getItem('token')?<div className="d-flex">
                             <button onClick={login} id='login' className="nav-btn mx-2">Login</button>
                             <button onClick={signup} id='signup' className="nav-btn mx-2">Sign Up</button>
-                        </div>
+                        </div>:<button onClick={handleLogout} className="nav-btn" id="signup">Logout</button>}
+                        
                     </div>
                 </div>
             </nav>
