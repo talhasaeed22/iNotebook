@@ -22,7 +22,7 @@ const NotesItem = (props) => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-4">
-                        <div className="card" style={{ borderRadius: '23px', borderColor: 'orangered', width: '18rem' }}>
+                        <div className="card" style={{ borderRadius: '23px', borderColor: 'orangered' }}>
                             <div className="card-body">
                                 <span style={{ backgroundColor: 'black', fontSize: '0.9rem', fontWeight: 'normal' }} className="position-absolute top-0 start-100 translate-middle badge rounded-pill ">
                                     {category}

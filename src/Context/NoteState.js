@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import NoteContext from './NoteContext'
 const NoteState = (props) => {
-    const url = 'http://localhost:5000';
+    const url = 'https://inotebook-project.herokuapp.com';
     const notesInitial = []
     const [notes, setNotes] = useState(notesInitial)
 

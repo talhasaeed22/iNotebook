@@ -5,7 +5,7 @@ import '../App.css'
 const Signup = () => {
     let nevigate = useNavigate();
     const [signupCred, setSignupCred] = useState({name:"", email:"", password:"", age:"", gender:""});
-    const url = 'http://localhost:5000';
+    const url = 'https://inotebook-project.herokuapp.com';
     const handleSignup = async (e)=>{
         e.preventDefault();
         const response = await fetch(`${url}/api/auth/signup`, {
@@ -34,7 +34,7 @@ const Signup = () => {
             <div className="container-fluid" id="login-container">
                 <div style={{height: '665px'}}  className="box" id="left_box">
                     <h1 style={{textDecoration:'underline'}}>SignUp</h1>
-                    <p className="text-muted">Login to your account for the access of your notes.</p>
+                    <p style={{padding:'23px'}} className="text-muted">Login to your account for the access of your notes.</p>
                     <div className="login-content">
                     <form action="">
                       <fieldset>
@@ -63,12 +63,11 @@ const Signup = () => {
                     </div>
                 </div>
                 <div style={{height: '665px', backgroundImage: `url(${login})`,color: 'white',backgroundPosition: 'center', backgroundSize: "cover" }} id="right_box" className=" box d-flex flex-column justify-content-center align-items-center ">
-                    <h1 >
+                <h1 style={{textAlign:'center'}}>
                         Welcome to iNotebook,
                     </h1>
-                    <h1>Save Your Notes Now</h1>
-                    <h4><i>Your Daily Notes and Plans</i></h4>
-
+                    <h1 style={{textAlign:'center'}}>Save Your Notes Now</h1>
+                    <h4 style={{textAlign:'center'}}><i>Your Daily Notes and Plans</i></h4>
                 </div>
 
             </div>

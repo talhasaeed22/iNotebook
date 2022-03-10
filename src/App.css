@@ -52,7 +52,16 @@
 }
 @media(max-width:990px){
   .navbar{
-    padding: 0px;
+    padding: 7px;
+  }
+  .navbar-nav {
+    margin-left: 0%;
+}
+}
+@media (max-width:272px){
+  #nav-bbtn{
+
+    flex-direction: column;
   }
 }
 
@@ -280,4 +289,19 @@
 }
 .notesicon:hover{
   transform: scale(1.5);
+} 
+.card{
+   width: 18rem;
+}
+@media(max-width:370px){
+  .card{
+    width: 100%;
+  }  
+
+}
+@media(max-width:991px){
+  #footer2 .form{
+    width: 100%;
+  }
+
 }

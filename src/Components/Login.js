@@ -4,7 +4,7 @@ import {Link, useNavigate} from 'react-router-dom'
 const Login = () => {
     
     const [loginCred, setLoginCred] = useState({email:"", password:""});
-    const url = 'http://localhost:5000';
+    const url = 'https://inotebook-project.herokuapp.com';
     let nevigate = useNavigate();
     const handleLogin = async (e)=>{
         if(loginCred.password.length < 5 || loginCred.email.length === 0){
@@ -59,11 +59,11 @@ const Login = () => {
                     </div>
                 </div>
                 <div style={{ backgroundImage: `url(${login})`,color: 'white',backgroundPosition: 'center', backgroundSize: "cover" }} id="right_box" className=" box d-flex flex-column justify-content-center align-items-center ">
-                    <h1 >
+                    <h1 style={{textAlign:'center'}}>
                         Welcome to iNotebook,
                     </h1>
-                    <h1>Save Your Notes Now</h1>
-                    <h4><i>Your Daily Notes and Plans</i></h4>
+                    <h1 style={{textAlign:'center'}}>Save Your Notes Now</h1>
+                    <h4 style={{textAlign:'center'}}><i>Your Daily Notes and Plans</i></h4>
                 </div>
 
             </div>
