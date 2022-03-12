@@ -62,7 +62,7 @@ const Signup = () => {
                     <label htmlFor="create_acc">Already Have An Account? <strong> <Link id="create_aacount" to="/Login">Login</Link> </strong></label>
                     </div>
                 </div>
-                <div style={{height: '665px', backgroundImage: `url(${login})`,color: 'white',backgroundPosition: 'center', backgroundSize: "cover" }} id="right_box" className=" box d-flex flex-column justify-content-center align-items-center ">
+                <div style={{height: '665px', backgroundImage: `url(${login})`,color: 'white',backgroundPosition: 'center', backgroundSize: "cover" }} id="right_box" className=" box ">
                 <h1 style={{textAlign:'center'}}>
                         Welcome to iNotebook,
                     </h1>
