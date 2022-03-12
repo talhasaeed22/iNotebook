@@ -76,6 +76,10 @@
 .home-heading{
       font-size: 4rem;
       font-weight: bold;
+      opacity: 0;
+}
+.home-header p{
+  opacity: 0;
 }
 .content{
   padding: 107px 60px;
@@ -89,11 +93,25 @@
   padding: 10px 22px;
   margin-left: 53px;
   transition: all 0.5s ease-in-out;
+  opacity: 0;
 }
 .home-btn:hover{
   background-color: black;
   transform: scale(1.1);
   color: white;
+}
+.slide-left{
+  animation: slideleft 1s linear forwards;
+}
+@keyframes slideleft {
+  0%{
+    transform: translate(100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0px);
+    opacity: 1;
+  }
 }
 @media(max-width:490px){
   .home-heading{
@@ -263,6 +281,10 @@
   border-top-left-radius:0px;
   border-bottom-left-radius:0px;
   color:white;
+  display: flex;
+flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #create_aacount{
@@ -275,6 +297,13 @@
   .box{
       width:85%;
       height:435px;    
+  }
+  #right_box{
+    display: none;
+  }
+  #left_box{
+    border: 1px solid orangered;
+    border-radius: 23px;
   }
 
 

@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import login from '../images/login.jpg';
+import Spinner from '../images/Spinner.gif'
+import login from '../images/login.jpg'
 import {Link, useNavigate} from 'react-router-dom'
 const Login = () => {
-    
+    const [loading, setLoading] = useState('false');
     const [loginCred, setLoginCred] = useState({email:"", password:""});
     const url = 'https://inotebook-project.herokuapp.com';
     let nevigate = useNavigate();
@@ -13,6 +14,7 @@ const Login = () => {
         }else{
 
             e.preventDefault();
+            setLoading('true');
             const response = await fetch(`${url}/api/auth/login`, {
                 method: 'POST',
                 headers: {
@@ -21,7 +23,7 @@ const Login = () => {
                 body: JSON.stringify({email:loginCred.email, password:loginCred.password})
             });
             const json = await response.json();
-            console.log(json);
+            setLoading('false');
             if(json.success){
                 //SAVE THE AUTH TOKEN AND REDIRECT
                 localStorage.setItem('token', json.token);
@@ -42,7 +44,7 @@ const Login = () => {
 
                 <div className="box" id="left_box">
                     <h1 style={{textDecoration:'underline'}}>Login</h1>
-                    <p className="text-muted">Login to your account for the access of your notes.</p>
+                    <p className="text-muted" style={{padding:'0px 32px'} }>Login to your account for the access of your notes.</p>
                     <div className="login-content">
                     <form>
                         <fieldset>
@@ -54,11 +56,12 @@ const Login = () => {
                             <input value={loginCred.password} onChange={onChange} className='inp' type="password" name="password" id="password" placeholder='Enter Your Password' />
                         </fieldset>
                         <input type="button" onClick={handleLogin} className="welcome-btn" value="Login" />
+                        { <div >{loading === 'true'? <img style={{width:'40px', display:'block', margin:'auto', marginBottom:'23px'}} className='thumbnail' src={Spinner} alt='Loading' /> : ""}</div> }
                     </form>
                     <label htmlFor="create_acc">New to our app? <strong> <Link id="create_aacount" to="/Signup">Create Account</Link> </strong></label>
                     </div>
                 </div>
-                <div style={{ backgroundImage: `url(${login})`,color: 'white',backgroundPosition: 'center', backgroundSize: "cover" }} id="right_box" className=" box d-flex flex-column justify-content-center align-items-center ">
+                <div style={{ backgroundImage: `url(${login})`,color: 'white',backgroundPosition: 'center', backgroundSize: "cover" }} id="right_box" className=" box  ">
                     <h1 style={{textAlign:'center'}}>
                         Welcome to iNotebook,
                     </h1>

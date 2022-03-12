@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react'
+import Spinner from '../images/Spinner.gif';
 import NoteContext from '../Context/NoteContext'
 import { useContext, useEffect } from 'react'
 import NotesItem from './NotesItem';
@@ -8,7 +9,7 @@ const Notes = () => {
     let navigate = useNavigate();
     const [note, setNote] = useState({eid:"", etitle: "", edescription: "", ecategory: "" });
     const context = useContext(NoteContext);
-    const { notes, fetchAllNotes, editNote } = context;
+    const { notes, fetchAllNotes, editNote, loading } = context;
     useEffect(() => {
         if(localStorage.getItem('token')){
             fetchAllNotes()
@@ -71,10 +72,10 @@ const Notes = () => {
                 <div className="notes">
                     <h1 style={{ textAlign: 'center', textDecoration: 'underline' }}>Your Notes</h1>
                     <div className="row ">
-                        {notes.length === 0 && <div className='container'> <h6 className='text-muted'><i>Add Your Notes to See Here</i></h6> </div>}
-                        {notes.map((note) => {
+                        {loading === 'true'? <div > <img className='thumbnail' style={{display:'block', margin:'23px auto'}} src={Spinner} alt="Loading" /> </div>: (notes.length === 0 ? <div className='container'> <h6 className='text-muted'><i>Add Your Notes to See Here</i></h6> </div>: notes.map((note) => {
                             return <div key={note._id} className="col-lg-4 col-md-6 col-sm-12 my-4"><NotesItem key={note._id} updatenote={updatenote} id={note._id} title={note.title} description={note.description} category={note.category} /></div>
-                        })}
+                        })) }
+                     
                     </div>
                 </div>
                 <hr />

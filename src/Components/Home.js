@@ -10,12 +10,12 @@ const Home = () => {
     }
     return (
         <>
-            <div style={{ backgroundImage: `url(${background})` }} className="home-header container-fluid" >
+            <div style={{ backgroundImage: `url(${background})`, overflowX:'hidden' }} className="home-header container-fluid" >
                 <div className="content d-flex flex-column " style={{color:'white'}}>
-                    <h1 className='home-heading' style={{fontWeight: 'bold', }}>iNotebook</h1>
-                    <h1 className='home-heading' style={{fontWeight: 'bold', }}>Your Personal Diary</h1>
-                    <p>Add any notes, remainders and your daily plans with full security.</p>
-                    <button onClick={routeChange} className="home-btn">Access Now!</button>
+                    <h1 className='slide-left home-heading' style={{fontWeight: 'bold', }}>iNotebook</h1>
+                    <h1 className='slide-left home-heading' style={{fontWeight: 'bold'}}>Your Personal Diary</h1>
+                    <p style={{animationDelay:'0.5s'}} className="slide-left">Add any notes, remainders and your daily plans with full security.</p>
+                    <button style={{animationDelay:'1s'}}  onClick={routeChange} className="home-btn slide-left">Access Now!</button>
                     
 
                 </div>

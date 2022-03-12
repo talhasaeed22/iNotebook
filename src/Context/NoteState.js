@@ -4,10 +4,12 @@ const NoteState = (props) => {
     const url = 'https://inotebook-project.herokuapp.com';
     const notesInitial = []
     const [notes, setNotes] = useState(notesInitial)
-
+    const [loading, setLoading] = useState('false');
+    const [addloading, setaddLoading] = useState('false');
     //Fetching all the notes
 
     const fetchAllNotes = async ()=>{
+        setLoading('true');
         const response = await fetch(`${url}/api/notes/fetchallnotes`, {
             method: 'GET',
             headers: {
@@ -17,10 +19,12 @@ const NoteState = (props) => {
         });
         const responce = await response.json();
         setNotes(responce);
+        setLoading('false');
     }
 
     //ADD A NOTE 
     const addNote = async (title, description, category) => {
+        setaddLoading('true');
         const response = await fetch(`${url}/api/notes/addnote`, {
             method: 'POST',
             headers: {
@@ -32,6 +36,7 @@ const NoteState = (props) => {
         const json = await response.json();
         console.log(json.newnote)
         setNotes(notes.concat(json.newnote));
+        setaddLoading('false');
 
     }
 
@@ -85,7 +90,7 @@ const NoteState = (props) => {
     }
 
     return (
-        <NoteContext.Provider value={{ notes, addNote, editNote, deleteNote, fetchAllNotes }}>
+        <NoteContext.Provider value={{ notes, addNote, editNote, deleteNote, fetchAllNotes, loading, addloading }}>
             {props.children}
         </NoteContext.Provider>
     )
